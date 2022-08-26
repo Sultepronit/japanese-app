@@ -142,7 +142,6 @@ chst=ed/(med/2);
 word();
 }
 
-//var povmin=0, ppmm=0;
 function word()
 {
 var bubu=0;
