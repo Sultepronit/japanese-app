@@ -439,28 +439,39 @@ ores+=('];</div>');
 $(".resout").append(ores);
 }
 
-function out2()
-{
+function out()
+{// form java array
 var ores="<div contenteditable class='ree'>";
-ores+='kv='+kv+'; kpv='+kpv+'; mxp='+mxp+'; ';
-ores+='psn='+psn+'; psk2='+psk2+'; mxK='+mxK+'; vp=[ ';
-for(x=0;x<kss;x++)
+ores+='public static String[][][] words0 = {<br>';
+//for(x=1;x<kss;x++)
+//for(x=200;x<300;x++)
+//for(x=1;x<300;x++)
+//for(x=250;x<500;x++)
+//for(x=500;x<750;x++)
+for(x=700;x<kss;x++)
 {
-ores+='['+vp[x][0]+', '+vp[x][1]+','+vp[x][2]+', '+vp[x][3]+','+vp[x][4];
+	//ores += '{ {"' + mms[x][0] + '"} },<br>';
+	ores += '<p>{ {';
+		for(y = 0; y < 22; y++) {
+			if(mms[x][0][y] > ""); else {break;}
+			if(mms[x][0][y] == "]") {break;}
+			ores += '"' + mms[x][0][y] + '", ';
+		}
+	ores += '}, {';
+		for(y = 0; y < 22; y++) {
+			if(mms[x][1][y] > ""); else {break;}
+			//if(mms[x][1][y] == "]") {break;}
+			ores += '"' + mms[x][1][y] + '", ';
+		}
+	ores += '}, {"<x>' + mms[x][2][0].replace(/</g, '&lt;').replace(/>/g, '&gt;') + '"';
+	ores += '}, {"<x>' + mms[x][3][0] + '"';
+	//ores += '} },<br>';
+	ores += '} },</p>';
+/*ores+='['+vp[x][0]+', '+vp[x][1]+','+vp[x][2]+', '+vp[x][3]+','+vp[x][4];
 ores+=', '+vp[x][5]+','+vp[x][6]+', '+vp[x][7]+','+vp[x][8]+', '+vp[x][9];
-ores+=', '+vp[x][10]+', '+vp[x][11]+', "'+mms[x][0]+'"],<br>';
+ores+=', '+vp[x][10]+', '+vp[x][11]+', "'+mms[x][0]+'"],<br>';*/
 }
-ores+=('];</div>');
-$(".resout").append(ores);
-ores="<div contenteditable class='ree'>";
-ores+='kkv='+kkv+'; Kpv='+Kpv+'; mxpk='+mxpk+'; ';
-ores+='psk1='+psk1+'; '+'vpk=[ ';
-for(x=0;x<ks;x++)
-{
-ores+='['+vpk[x][0]+', '+vpk[x][1]+','+vpk[x][2]+', '+vpk[x][3]+','+vpk[x][4];
-ores+=', '+vpk[x][5]+', '+vpk[x][6]+', "'+mm[x][0]+'"],<br>';
-}
-ores+=('];</div>');
+ores+=('};</div>');
 $(".resout").append(ores);
 }
 
