@@ -414,7 +414,32 @@ a.play();*/
 }
 }
 
-function out()
+function out2()
+{
+var ores="<div contenteditable class='ree'>";
+ores+='kv='+kv+'; kpv='+kpv+'; mxp='+mxp+'; ';
+ores+='psn='+psn+'; psk2='+psk2+'; mxK='+mxK+'; vp=[ ';
+for(x=0;x<kss;x++)
+{
+ores+='['+vp[x][0]+', '+vp[x][1]+','+vp[x][2]+', '+vp[x][3]+','+vp[x][4];
+ores+=', '+vp[x][5]+','+vp[x][6]+', '+vp[x][7]+','+vp[x][8]+', '+vp[x][9];
+ores+=', '+vp[x][10]+', '+vp[x][11]+', "'+mms[x][0]+'"],<br>';
+}
+ores+=('];</div>');
+$(".resout").append(ores);
+ores="<div contenteditable class='ree'>";
+ores+='kkv='+kkv+'; Kpv='+Kpv+'; mxpk='+mxpk+'; ';
+ores+='psk1='+psk1+'; '+'vpk=[ ';
+for(x=0;x<ks;x++)
+{
+ores+='['+vpk[x][0]+', '+vpk[x][1]+','+vpk[x][2]+', '+vpk[x][3]+','+vpk[x][4];
+ores+=', '+vpk[x][5]+', '+vpk[x][6]+', "'+mm[x][0]+'"],<br>';
+}
+ores+=('];</div>');
+$(".resout").append(ores);
+}
+
+function out2()
 {
 var ores="<div contenteditable class='ree'>";
 ores+='kv='+kv+'; kpv='+kpv+'; mxp='+mxp+'; ';
