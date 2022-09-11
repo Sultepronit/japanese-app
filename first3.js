@@ -414,7 +414,7 @@ a.play();*/
 }
 }
 
-function out2()
+function out()
 {
 var ores="<div contenteditable class='ree'>";
 ores+='kv='+kv+'; kpv='+kpv+'; mxp='+mxp+'; ';
@@ -439,7 +439,7 @@ ores+=('];</div>');
 $(".resout").append(ores);
 }
 
-function out()
+function out2()
 {// form java array
 var ores="<div contenteditable class='ree'>";
 ores+='public static String[][][] words0 = {<br>';
