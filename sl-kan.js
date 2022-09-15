@@ -58,12 +58,15 @@ return r;
 function rb12()
 { 
 x=0; for(;x<kss;x++){if( pote2(x) ){break;} }	
-return --x; }
+return --x;
+}
 
 function re12()
 { 
 x=kss-1; for(;;x--){if( pote2(x) ){break;} }
-return ++x; }
+//return ++x; 
+return x; 
+}
 
 function iprskr2()
 {var ene=0;
@@ -73,9 +76,10 @@ rozbg2=rb12();
 if(rozbg2>(kss-5)){mxK+=2;}else{break;}
 }
 rozed2=re12(); 
+//if(rozed2 == kss){rozed2--;}
 
 altEd=rozed2;
-
+	//window.alert(rozbg2 + " - " + rozed2);
 for(x=rozbg2;x<=rozed2;x++){
 if(pote2(x)){kfs00++;}
 if(kfs00>5 && altEd==rozed2){ altEd=x+1; }
