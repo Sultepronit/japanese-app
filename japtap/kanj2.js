@@ -249,14 +249,17 @@ function word()
 	
 	for(x=0;x<99;x++)
 	{
-	pidb();
-	if(vp2[wn][3]>1){ppp++; vp2[wn][3]--; ToCell(wn+1,'D',vp2[wn][3]);}else{break;}
+	pidb(); 
+	if(vp2[wn][3]>1){ppp++; vp2[wn][3]--; ToCell(wn+1,'D',vp2[wn][3]);
+	ToCell(wn+1,'C',ostp++); ToCell(1,'C',ostp);
+	}
+	else{break;}
 	}
 	
 	if(yn[wn-1]);else{dod++;}
-	$(".time").replaceWith("<p class='time'>"+tim+"("+povmin+") "+P+"-"+M+":<b>"+R+"</b>("+ppp+")</p>");
-	if(tim<2){$(".time").append(" "+ek+"/"+ddk + "|" + med);}
-	$(".num").replaceWith("<p class='num'>"+wn+":"+vp2[wn][1]+"/"+vp2[wn][3]+" ["+yn[wn-1]+"]("+dod+")</p>");
+	$(".time").replaceWith("<p class='time'>"+tim+"("+povmin+") "+P+"-"+M+":<b>"+R+"</b>(<b>"+ppp+"</b>)</p>");
+	if(tim<2){$(".time").append(" "+ek+"/"+ddk);}
+	$(".num").replaceWith("<p class='num'>"+wn+":"+vp2[wn][1]+"/"+vp2[wn][3]+" ["+yn[wn-1]+"] ("+dod+")</p>");
 	$(".transl").replaceWith("<p class='transl'> </p>");
 	$(".orig").replaceWith("<p class='orig'>"+vp2[wn][0]+"</p>");
 	//var rre=swithk();
