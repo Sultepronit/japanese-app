@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+<title>kanNew</title>
+<meta charset="utf-8" />
+<script src="js-bg2.js"></script>
+<script src="vp-j.js"></script>
+<script src="vp-k.js"></script>
+<script src="im.js"></script>
+<script src="ou.js"></script>
+<script src="zah.js"></script>
+<script src="s-k-s.js"></script>
+<script src="pv.js"></script>
+<script src="ps.js"></script>
+<script src="vv.js"></script>
+<script src="vs.js"></script>
+<script src="sk.js"></script>
+<script src="ow.js"></script>
+<script src="kj-bgm.js"></script>
+<script src="prsk.js"></script>
+<script src="K-S.js"></script>
+<script src="kpv.js"></script>
+<script src="kvs.js"></script>
+<script src="kvv.js"></script>
+<script src="kps.js"></script>
+<script src="vp-f.js"></script>
+<script src="fr-bgm.js"></script>
+<script src="pp.js"></script>
+<script src="jooyoo.js"></script>
+<script src="0kanji.js"></script>
+<script src="first2.js"></script>
+<script src="radyk.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+<script src="sl-kan.js"></script>
+
+</head>
+
+<body>
+<script type="text/javascript">
+var word ='';
+
+var kanjiArray = new Array(0);
+var wordArray = new Array(0);
+
+//for(x=4000;x<kss;x++)
+//for(x=1;x<99;x++)
+for(x=1;x<kss;x++)
+{
+	//document.write(vsika2(x) + "<br>");
+	//document.write(_kan(x) + "<br>");
+	word=vsika2(x);
+	//document.write(word + "<br>");
+	var wordKanjiSet = new Set();
+	for(var y = 0;y<99;y++) {
+		if(!word[y]) break;
+		if(word[y]>"ー") {
+			if(word[y]=="･"){continue;}
+			if(word[y]=="２"){continue;}
+			//document.write(word[y]);
+			wordKanjiSet.add(word[y]);
+		}
+	}
+	if(!wordKanjiSet.size) continue;
+	//document.write(wordKanjiSet + wordKanjiSet.size + "<br>");
+	for (let kanji of wordKanjiSet) {
+		var areListed = false;
+		for(var z = 1; z < ks; z++) {
+			if(mm[z][0] == kanji) { 
+				areListed = true;
+				break;
+			}
+		}
+		if(areListed) continue;
+		console.log(kanji);
+		for(var a = 0; a <= kanjiArray.length; a++) {
+			if(kanji == kanjiArray[a]) {
+				wordArray[a] += "; " + word + ":" + mms[x][1];
+				break;
+			}
+			if(a == kanjiArray.length) {
+				kanjiArray.push(kanji);
+				wordArray.push(word + ":" + mms[x][1]);
+				break;
+			}
+		}
+		
+	}
+}
+document.write(kanjiArray + "<br>");
+//document.write(wordArray + "<br>");
+		
+document.write('<table><tr><td><div contenteditable>');
+for(x=0;x<kanjiArray.length;x++){
+	document.write("['" + kanjiArray[x] + "', ");
+	document.write('"' + wordArray[x] + '", ');
+	
+	var joo = 1;
+	for(;joo<jooy.length;joo++) {
+		if(kanjiArray[x] == jooy[joo][0]) break;
+	}
+	if(joo == jooy.length) joo = 0;
+	//document.write("[" + joo + "]");
+	//document.write("[" + jooy[joo][2] + "]");
+	var ra = 0;
+	loop1:for(;ra<rad.length;ra++) {
+		if(jooy[joo][2][0] == rad[ra][0][0]) break;
+		if(rad[ra][0].length > 1) {
+			//document.write("!");
+			for(y=1;y<rad[ra][0].length;y++) {
+				if(jooy[joo][2][0] == rad[ra][0][y]) { 
+					//document.write("#");
+					break loop1;
+				}
+			}
+		}
+	}
+	//document.write("[" + ra + "]");
+	document.write('"' + rad[ra][4] + '", ');
+	document.write("'" + jooy[joo][3] + "', ");
+	document.write(jooy[joo][5] + ", ");
+	document.write(joo + ", ");
+	document.write(ra + ", ");
+	document.write("0, 5],<br>"); 
+	//document.write("<br>");
+}
+
+document.write('</div></td>');
+document.write('<td><div contenteditable>');
+//for(x=0;x<kpm;x++){document.write(/*vkm[x],' ',*/vnm[x],'<br>');}
+document.write('</div></td></tr></table>');
+</script>
+<!--<p class="super">super</p>-->
+</body>
+</html>
