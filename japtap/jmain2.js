@@ -248,7 +248,7 @@ if(vp2[wn][6]==''){vp2[wn][6]=0;}
 	
 	if( (vp2[wn][1]>0/*&&vp2[wn][2]>0*/)&&vp2[wn][3]>0 )
 	{ ToCell(wn+1,'E',ostp++); ToCell(1,'E',ostp); R++;
-		if( (kss-ostp+pvt)<(2000) ){pvt+=10; ToCell(1,'A',pvt);}
+		//if( (kss-ostp+pvt)<(2000) ){pvt+=10; ToCell(1,'A',pvt);}
 	ToCell(wn+1,'B',0); ToCell(wn+1,'C',0); ToCell(wn+1,'D',0);}
 	else{
 	if(rrr){ if(np==0){ ToCell(wn+1,'B',vp2[wn][1]); }else{ ToCell(wn+1,'D',vp2[wn][3]); } }

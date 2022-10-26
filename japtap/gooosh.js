@@ -16,7 +16,9 @@ function getTasks () {
         	//в случае успеха преобразуем полученный ответ в JSON и передаем отдельной функции, которая сформирует нам таблицу
 			vp2 = JSON.parse(xhr.response);
 			ostp=vp2[0][4];
-			pvt=vp2[0][0];
+			//pvt=vp2[0][0];
+			pvt = ostp - vp2[0][7];
+			ToCell(1,'A',pvt);
 			//word();
 			spys();
         }
