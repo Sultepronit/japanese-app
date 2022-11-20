@@ -1,13 +1,12 @@
-function pote(ae)
+var rozp = [];
+
+/*function pote(ae)
 {var r=0;
 //for(;vp[ae][0]>mxp;){
 for(;vp[ae][0]>0;){
 if(vp[ae][5]>0){break;}
 if(vp[ae][0]>mxp){r=1; break;}
 //if(_kan(ae)){ if(vp[ae][11]<8888){r=1;} break;}	
-/*if(vp[ae][0]<mxp){break;}
-if(vp[ae][5]<0.5){r=1; break;}	*/
-
 
 break;}
 return r;
@@ -33,7 +32,8 @@ var altEd=rozed;
 
 for(x=rozbg;x<=rozed;x++){
 if(pote(x)){zki++;}
-if(zki>15 && altEd==rozed){altEd=x+1; /*break;*/}
+//if(zki>15 && altEd==rozed){altEd=x+1; break;}
+if(zki>15 && altEd==rozed){altEd=x+1;}
 }
 rozed=altEd;
 }
@@ -48,12 +48,24 @@ if(pote(ae)){//break;
 	if(x==bue){buly[x]=ae; bue++; ae--; br=1; break;}	}
 }
 }
-return ae; }
+return ae; }*/
+
+function randomCard() {
+	var n = vyp(0, rozp.length - 1);
+	//var ae = rozp[n];
+	ae = rozp[n];
+	rozp.splice(n, 1);
+	console.log(rozp);
+	return ae;
+}
 
 function rtout()
 {res0();
 $(".re0").replaceWith("<p class='re0'>ROZ!!!</p>");
-var ae=rslov(rozbg,rozed);
+//var ae=rslov(rozbg,rozed);
+//var ae = randomCard();
+//ae = randomCard();
+randomCard();
 ifsh=0; ifsh0=0; KK0=0;
 akan=mms[ae][0][0]; if(akan=="["){akan=mms[ae][0][1];}
 da1="<p class='data'><b>"+ae+" : "+vp[ae][0];//+" | "+vp[ae][3]+" "+vp[ae][4];

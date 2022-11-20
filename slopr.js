@@ -36,24 +36,39 @@ kv=0; kpv=0;
 var sps0=[0,0,0];
 var sp00=[0,0,0];
 
+//var rozp = [];
+//rozp.push(77);
+//console.log(rozp);
+
 for(x=1;x<kss;x++)
 {
-if(vp[x][0]>mxp){continue;}
-if(vp[x][0]==0){svs[kv]=x; kv++;}
-else{
-	if(vp[x][3]<0 || vp[x][4]<0){sps[ne++]=x;}else{sps0[pe++]=x;}	kpv++;
+	if(vp[x][0]>mxp) {
+		if(vp[x][5] > 0) continue;
+		//console.log(x);
+		rozp.push(x);
+		continue;
 	}
-}
-kv0=kv;
-$(".t1").append("("+ne+")");
-for(;ne<kps;)
-{
-	ae=vyp(0,pe-1);
-	sps[ne]=sps0[ae];
-	if(sp00[ae]==1){continue;}
-	sp00[ae]=1;
-	ne++;
-}
+	//if(vp[x][0]>mxp){continue;}
+	if(vp[x][0]==0){svs[kv]=x; kv++;}
+	else{
+		if(vp[x][3]<0 || vp[x][4]<0){sps[ne++]=x;}else{sps0[pe++]=x;}	kpv++;
+		}
+	}
+	kv0=kv;
+	$(".t1").append("("+ne+")");
+	
+	//rozp.splice(16,1);
+	//rozp.splice(16);
+	console.log(rozp);
+	//alert(kps);
+	for(;ne<kps;)
+	{
+		ae=vyp(0,pe-1);
+		sps[ne]=sps0[ae];
+		if(sp00[ae]==1){continue;}
+		sp00[ae]=1;
+		ne++;
+	}
 
 }
 

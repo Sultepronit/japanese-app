@@ -54,16 +54,28 @@ pp0[0]=kv-2;
 pp0[3]=kkv; if(kkv>4){pp0[3]=5;}
 pp0[4]=8; 
 
-iprskr();
+//iprskr();
+
+sppf();
 iprskr2();
 
-if(zki<17){pp0[2]= Math.round( zki/4-0.5 );}else{pp0[2]=4;}
+
+//if(zki<17){pp0[2]= Math.round( zki/4-0.5 );}else{pp0[2]=4;}
+var extraLength = 0;
+if(rozp.length < 21) {
+	pp0[2] = Math.round(rozp.length/5 - 0.5);
+} else {
+	pp0[2] = 5;
+	extraLength = rozp.length;
+	rozp.splice(20);
+}
+
 if(kfs00<6){pp0[5]= kfs00-1;}else{pp0[5]=5;}
 
 pp0[1]=60-pp0[0]-pp0[2]-pp0[3]-pp0[4]-pp0[5]; 
 if(pp0[1]<20){pp0[1]=20;}
 kps=pp0[1]*4;
-sppf();
+//sppf();
 
 /*pp0[0]=18;
 pp0[1]=1;
@@ -73,11 +85,15 @@ pp0[4]=0;*/
 $("p.t1").append(/*pp0[0]+", "+pp0[1]+"/"+*/" "+pp0);
 //$(".t1").append(" "+ne+"/"+kps+" ");
 iprsk();
-$(".t1").append("<br><b>"+rozbg+"/"+rozed+"</b>");
 
-
-if(zki<17){$(".t1").append("/"+zki+" // ");}
-else{$(".t1").append("/16("+zki+") // ");}
+//$(".t1").append("<br><b>"+rozp[0]+"/"+rozed+"</b>");
+//$(".t1").append("<br><b>"+ rozp[0] +"/");
+$(".t1").append("<br><b>"+ rozp[0] +"/"+ rozp[rozp.length - 1] +"</b>");
+if(extraLength == 0 ) {
+	$(".t1").append("/"+ rozp.length +" // ");
+} else {
+	$(".t1").append("/20("+ extraLength +") // ");
+}
 
 //$(".t1").append(" | "+zki+" : "+pxs[0]+','+pxs[1]+','+pxs[2]+','+pxs[3]+','+pxs[4]+',');
 //$(".t1").append(pxs[5]+','+pxs[6]+','+pxs[7]+','+pxs[8]);
