@@ -75,6 +75,7 @@ if(kfs00<6){pp0[5]= kfs00-1;}else{pp0[5]=5;}
 pp0[1]=60-pp0[0]-pp0[2]-pp0[3]-pp0[4]-pp0[5]; 
 if(pp0[1]<20){pp0[1]=20;}
 kps=pp0[1]*4;
+toRepeatList();
 //sppf();
 
 /*pp0[0]=18;

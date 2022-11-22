@@ -30,10 +30,11 @@ $(".t1").append(r63+", "+r62+', '+r61+':'+Math.round(r61/(kss-200)*1000)/10+"%" 
 }
 
 var ne=0, pe=0;
+var repeatAllPositive = [];
 function sppf()
 {
 kv=0; kpv=0;
-var sps0=[0,0,0];
+//var sps0=[0,0,0];
 var sp00=[0,0,0];
 
 //var rozp = [];
@@ -42,7 +43,7 @@ var sp00=[0,0,0];
 
 for(x=1;x<kss;x++)
 {
-	if(vp[x][0]>mxp) {
+	if(vp[x][0] > mxp) {
 		if(vp[x][5] > 0) continue;
 		//console.log(x);
 		rozp.push(x);
@@ -51,17 +52,25 @@ for(x=1;x<kss;x++)
 	//if(vp[x][0]>mxp){continue;}
 	if(vp[x][0]==0){svs[kv]=x; kv++;}
 	else{
-		if(vp[x][3]<0 || vp[x][4]<0){sps[ne++]=x;}else{sps0[pe++]=x;}	kpv++;
+			if(vp[x][3]<0 || vp[x][4]<0) {
+				kpv++;
+				sps[ne++]=x;
+			} else {
+				//sps0[pe++]=x;
+				repeatAllPositive.push(x);
+			}	
 		}
 	}
 	kv0=kv;
 	$(".t1").append("("+ne+")");
+	//console.log(sps);
 	
 	//rozp.splice(16,1);
 	//rozp.splice(16);
+	//console.log(svs);
 	console.log(rozp);
 	//alert(kps);
-	for(;ne<kps;)
+	/*for(;ne<kps;)
 	{
 		ae=vyp(0,pe-1);
 		sps[ne]=sps0[ae];
@@ -69,11 +78,28 @@ for(x=1;x<kss;x++)
 		sp00[ae]=1;
 		ne++;
 	}
+	console.log(sps);*/
+}
 
+function toRepeatList() {
+	//console.log(repeatAllPositive);
+	for(;ne<kps;)
+	{
+		//ae=vyp(0,pe-1);
+		ae = vyp(0, repeatAllPositive.length - 1);
+		//sps[ne]=sps0[ae];
+		sps[ne] = repeatAllPositive[ae];
+		/*if(sp00[ae]==1){continue;}
+		sp00[ae]=1;*/
+		repeatAllPositive.splice(ae, 1);
+		ne++;
+	}
+	//console.log(repeatAllPositive);
+	console.log(sps);
 }
 
 var ppmm=0;
-function slov(b,e,k)
+/*function slov(b,e,k)
 {ppmm=0;
 ae=vyp(b,e);
 for(br=0,x=0;br==0;ae++,x++){
@@ -88,7 +114,7 @@ if(vp[ae][0]==k || (vp[ae][0]<k && vp[ae][0]) ){//break;
 	if(x==bue){buly[x]=ae; bue++; ae--; br=1; break;}	}
 }
 }
-return ae; }
+return ae; }*/
 
 var bubu=0;
 function slov2()
@@ -176,6 +202,8 @@ for(;;)
 {
 //if(ima==0){ae=slov(vyvbg,kss,0);}else{ae=slov(1,kss,mxp);}
 ae=slov2();
+console.log(ae);
+
 if(vp[ae][3]>vp[ae][4]){np=4;}else{np=3;}
 if(vp[ae][3]>2){np=3;}//supervyvtwennqa
 //avtopovtorennqa
