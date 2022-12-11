@@ -31,6 +31,8 @@ $(".t1").append(r63+", "+r62+', '+r61+':'+Math.round(r61/(kss-200)*1000)/10+"%" 
 
 var ne=0, pe=0;
 var repeatAllPositive = [];
+var firstRepeat = [];
+var firstRepeatCount = 0;
 function sppf()
 {
 kv=0; kpv=0;
@@ -51,18 +53,25 @@ for(x=1;x<kss;x++)
 	}
 	//if(vp[x][0]>mxp){continue;}
 	if(vp[x][0]==0){svs[kv]=x; kv++;}
-	else{
+	else {
+			kpv++;
+			if(vp[x][0] == 1) {
+				firstRepeat.push(x);
+				continue;
+			}
+			
 			if(vp[x][3]<0 || vp[x][4]<0) {
-				kpv++;
 				sps[ne++]=x;
 			} else {
-				//sps0[pe++]=x;
 				repeatAllPositive.push(x);
 			}	
 		}
 	}
 	kv0=kv;
+	firstRepeatCount = Math.round(firstRepeat.length / 10);
+	//if(firstRepeatCount > 10) firstRepeatCount = 10;
 	$(".t1").append("("+ne+")");
+	$(".t1").append("(" + firstRepeat.length + ":" + firstRepeatCount + ")");
 	//console.log(sps);
 	
 	//rozp.splice(16,1);
@@ -70,32 +79,37 @@ for(x=1;x<kss;x++)
 	//console.log(svs);
 	console.log(rozp);
 	//alert(kps);
-	/*for(;ne<kps;)
-	{
-		ae=vyp(0,pe-1);
-		sps[ne]=sps0[ae];
-		if(sp00[ae]==1){continue;}
-		sp00[ae]=1;
-		ne++;
-	}
-	console.log(sps);*/
+
 }
 
 function toRepeatList() {
 	//console.log(repeatAllPositive);
+	console.log(sps);
+	console.log(firstRepeat);
+	console.log(ne);
+	var firstRepeatUntil = ne + firstRepeatCount * 4;
+	for(;ne < firstRepeatUntil;)
+	{
+		ae = vyp(0, firstRepeat.length - 1);
+		sps[ne] = firstRepeat[ae];
+		firstRepeat.splice(ae, 1);
+		ne++;
+	}
 	for(;ne<kps;)
 	{
-		//ae=vyp(0,pe-1);
 		ae = vyp(0, repeatAllPositive.length - 1);
-		//sps[ne]=sps0[ae];
 		sps[ne] = repeatAllPositive[ae];
-		/*if(sp00[ae]==1){continue;}
-		sp00[ae]=1;*/
 		repeatAllPositive.splice(ae, 1);
 		ne++;
 	}
 	//console.log(repeatAllPositive);
 	console.log(sps);
+	for(var i = 0; i < sps.length; i++) {
+		if(vp[ sps[i] ][0] == 1) {
+			//console.log(sps[i] + ": " + 1);
+			console.log(1);
+		}
+	}
 }
 
 var ppmm=0;
