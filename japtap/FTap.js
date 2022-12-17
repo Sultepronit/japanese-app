@@ -6,6 +6,7 @@ var vyvbg=0;
 var np=0;
 var ifsh=0, ifend=0;
 var key1="";
+var counter = 1;
 
 function vyp(b,e){ return( Math.round(Math.random()*(e-b))+b); }
 
@@ -64,14 +65,6 @@ kfromf();
 else{ if(ifsh==1 || np==2){$(".ft").append(mmf[ae][0]);}
 		else{$(".ft").append(mmf[ae][1]); }
 }
-}
-
-function repe()
-{
-re1="<p class='repeat'>"+ae+" : "+vpf[ae][0]+" | "+vpf[ae][1]+" "+vpf[ae][2];
-re1+=(/*" | "+vp[ae][5]+" "+vp[ae][6]+*/" / ");
-re1+=(mmf[ae][2]/*+" – "+mms[ae][2]*/+"</p>");
-$("p.repeat").replaceWith(re1);
 }
 
 function out()
@@ -148,7 +141,7 @@ return x; }
 
 function mvyv()
 {
-	var a1=-1, a2=-1;
+	/*var a1=-1, a2=-1;
 	for(x=0;;)
 	{
 		if( (pp1[x]+1)<=pp0[x] ){ if(a1<0){a1=x;}
@@ -165,23 +158,25 @@ function mvyv()
 	else{ ima=a1; pp1[ima]++;
 	$(".swi").replaceWith("<section class='swi'></section>");
 	tout();
-	}
+	}*/
+	tout();
 }
 
 var ifgo;
 function tout()
-{//res0();
-	console.log(ae);
+{
+	stats();
+	$(".swi").replaceWith("<section class='swi'></section>");
+	//console.log(ae);
 	//var ae=0;
 	mmf.splice(ae,1);
 	//if(ima==0){ae=slov(vyvbg,ksf,0);}else{ae=slov(1,ksf,mxpf);}
-	//ae = vyp(0, mmf.length);
-	ae = vyp(0, 10);
-	console.log(mmf);
+	ae = vyp(0, mmf.length);
+	//ae = vyp(0, 10);
+	console.log(mmf.length);
 	ifsh=0;
 
-	da1="<p class='data'>"+ae+" : "+vpf[ae][0]+" | "+vpf[ae][1]+" "+vpf[ae][2];
-	da1+=(/*" | "+vpf[ae][5]+" "+vpf[ae][6]+*/"</p>");
+	da1="<p class='data'>"+ae+" : "+vpf[ae][0]+"</p>";
 	$("p.data").replaceWith(da1);
 
 	ifgo=vyp(0,1); 
@@ -266,8 +261,12 @@ function pmr(a)
 	}
 	else{ if(vp[ae][np+2]>0) { if(ima==1){vp[ae][np+2]--; rm++;}
 		else{vp[ae][np+2]-=0.5; rm+=0.1;} } }*/
-	repe(); mvyv(); //res0();
+	mvyv();
 	}
+}
+
+function stats() {
+	$(".counter").replaceWith("<p class='counter'>" + counter++ + "</p>");
 }
 
 var spsk=['','']; esk=0;

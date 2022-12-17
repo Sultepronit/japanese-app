@@ -2,7 +2,18 @@ header{background: #eeeeee;}
 
 p{margin: 0;}
 
+.counter {
+	font-size: 1.5em;
+	float: left;
+}
+
+.data {
+	font-size: 1.5em;
+	float: right;
+}
+
 main{
+clear: both;
 min-height:500px;
 background: #eeeeee;
 height: 1300px;
@@ -37,8 +48,6 @@ height: 80px;
 .repeat{/*float:left;*/ clear: both;}
 
 .t1{float: right; text-align:right;}
-
-.data{font-size: 1.5em;}
 
 .res{clear: both; font-size: 1.5em; margin: 0;}
 
