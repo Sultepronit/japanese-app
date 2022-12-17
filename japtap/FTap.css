@@ -1,0 +1,149 @@
+header{background: #eeeeee;}
+
+p{margin: 0;}
+
+main{
+min-height:500px;
+background: #eeeeee;
+height: 1300px;
+overflow: auto;
+}
+
+.buttons button {
+	width: 22.6%;
+	height: 200px;
+	margin: 1%;
+}
+
+#show {
+	width: 72%;
+	height: 200px;
+	margin: 1%;
+}
+
+button#good{background-color: green;}
+button#neutral{background-color:yellow;}
+button#bad{background-color: red;}
+
+.kan{
+float: none;
+height: 80px;
+}
+
+.n1{float: left; }
+
+.re0{float: left; font-size: 2.5em;}
+
+.repeat{/*float:left;*/ clear: both;}
+
+.t1{float: right; text-align:right;}
+
+.data{font-size: 1.5em;}
+
+.res{clear: both; font-size: 1.5em; margin: 0;}
+
+.examp{text-align: center; font-size: 1.5em;}
+
+.mtab{
+/*text-align: center;*/
+overflow: auto;
+clear:both;
+border: 9px solid #eeeeee;
+background: white;
+padding: 1%;
+margin: 0;
+}
+
+.ik{font-size:2em;}
+.zk{font-size:2em;}
+.rk{/*float: left;*/ font-size:1.5em; color: green;}
+.key0{float: left; font-size: 1.5em; color: blue;}
+.key1{float: right; font-size: 3em; color: blue;}
+
+.zk2{font-size:2em; text-align:center;}
+
+.sk{
+float: right;
+font-family: "MS PMincho";
+margin:0;
+font-size: 7em;
+/*text-align: center;*/
+}
+
+.sk22{
+/*float: right;*/
+font-family: "MS PMincho";
+margin:0;
+font-size: 7em;
+text-align: center;
+}
+
+.tra{font-family: "MS PGothoc"; color: gray;}
+.k2{/*float: none;*/ height:120px;}
+.k22{float: none; height:110px;}
+
+.GO{
+font-family: "MS PGothic";}
+
+.kanj{
+font-size: 1.5em;
+text-align: center;
+}
+.onek{
+margin: 0 10px 0 10px;
+}
+.os{
+font-family: "MS PMincho";
+margin:0;
+font-size: 5em;
+text-align: center;
+}
+.of{
+font-family: "MS PMincho";
+margin:0;
+font-size: 6em;
+text-align: center;
+}
+
+.ts{
+font-family: "MS PMincho";
+font-size: 2em;
+text-align: center;
+}
+
+.ps{
+margin:0;
+font-size: 3.6em;
+text-align: center;
+}
+
+.sl{float:left; background:white; font-size:1.8em;
+margin: 4px; /*Margin-left: 1px;*/ margin-right: 4px;}
+
+.slo2{clear:both; background:white; font-size:2.8em;
+margin: 4px; /*Margin-left: 1px;*/ margin-right: 4px;}
+
+footer{
+background: #eeeeee;
+/*height: 10px;*/
+}
+.resout{
+overflow: auto;
+width: 2000px;
+}
+.ree{
+background-color: white;
+float:left;
+max-width:400px;}
+
+input{width: 100px; font-size: 2em;}
+
+.n1 button{width:45px; font-size: 1.5em;}
+
+.gr {color: gray;} /*#999999;}*/
+
+.re {color: yellow;}
+
+.ge {color: green;}
+
+.bl {color: blue;}
