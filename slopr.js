@@ -39,10 +39,6 @@ kv=0; kpv=0;
 //var sps0=[0,0,0];
 var sp00=[0,0,0];
 
-//var rozp = [];
-//rozp.push(77);
-//console.log(rozp);
-
 for(x=1;x<kss;x++)
 {
 	if(vp[x][0] > mxp) {
@@ -339,14 +335,25 @@ if(a<1){;}
 else
 {
 vp[ae][np]++;
-if(ima==0){vp1++;
-if(vp[ae][3]>1 && vp[ae][4]>1 && vp[ae][5]>0)//supervyvtwennqa
-{vr++; kv--; mxp-=1; vp[ae][0]=1; vp[ae][3]=0; vp[ae][4]=0;}
-if( (ae<kss-50)*(vp[ae][3]>0)*(vp[ae][4]>0)*(vp[ae][5]>0) )//supervyvtwennqa
-{vr++; kv--; mxp-=1; vp[ae][0]=1; vp[ae][3]=0; vp[ae][4]=0;}
-}
-else{pp++; if(vp[ae][3]>0 && vp[ae][4]>0){pr++; mxp+=1;
-vp[ae][0]=psn++; vp[ae][3]=0; vp[ae][4]=0; /*vp[ae][11]=0;*/}
+if(ima==0){
+	vp1++;
+	if(vp[ae][3]>1 && vp[ae][4]>1 && vp[ae][5]>0)//supervyvtwennqa
+	{vr++; kv--; mxp-=1; vp[ae][0]=1; vp[ae][3]=0; vp[ae][4]=0;}
+	if( (ae<kss-50)*(vp[ae][3]>0)*(vp[ae][4]>0)*(vp[ae][5]>0) )//supervyvtwennqa
+	{vr++; kv--; mxp-=1; vp[ae][0]=1; vp[ae][3]=0; vp[ae][4]=0;}
+} else {
+	pp++;
+	if(vp[ae][3]>0 && vp[ae][4]>0) {
+		pr++;
+		vp[ae][3]=0;
+		vp[ae][4]=0; 
+		if(vp[ae][0] == 1) {
+			vp[ae][0] = 2;
+		} else {
+			mxp+=1;
+			vp[ae][0]=psn++; 
+		}
+	}
 }
 }
 
