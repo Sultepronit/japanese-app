@@ -7,6 +7,7 @@ var np=0;
 var ifsh=0, ifend=0;
 var key1="";
 var counter = 1;
+var good = 0, neutral = 0, bad = 0;
 
 function vyp(b,e){ return( Math.round(Math.random()*(e-b))+b); }
 
@@ -96,11 +97,6 @@ $("p.t1").append(pp0[0]+", "+pp0[1]+"<br>"+fkp);
 
 vyvbg=vb1(); //$("p.t1").append(", "+vyvbg);
 
-	document.getElementById("show").style.display = "";
-	document.getElementById("good").style.display = "none";
-	document.getElementById("neutral").style.display = "none";
-	document.getElementById("bad").style.display = "none";
-
 mvyv();
 
 	$("button#show").on("click", function(event){
@@ -164,7 +160,11 @@ function mvyv()
 
 var ifgo;
 function tout()
-{
+{	
+	document.getElementById("show").style.display = "";
+	document.getElementById("good").style.display = "none";
+	document.getElementById("neutral").style.display = "none";
+	document.getElementById("bad").style.display = "none";
 	stats();
 	$(".swi").replaceWith("<section class='swi'></section>");
 	//console.log(ae);
@@ -181,7 +181,7 @@ function tout()
 
 	ifgo=vyp(0,1); 
 	var mtab = "<section class='mtab'>";
-	mtab+="<p class='kanj'></p>";
+	//mtab+="<p class='kanj'></p>";
 	np = vyp(1,2);
 	//if(vpf[ae][1]<vpf[ae][2]){
 	if(np == 1){
@@ -220,6 +220,7 @@ function tout()
 		mtab+="</p>"; 
 		//mtab+="<p class='os'>"+mms[ae][0]+"</p><p class='ps'></p>"; 
 	}
+	mtab+="<p class='kanj'></p>";
 
 	mtab+="</section>";
 	$(".mtab").replaceWith(mtab);
@@ -227,15 +228,22 @@ function tout()
 
 function pmr(a)
 {
-	document.getElementById("show").style.display = "";
-	document.getElementById("good").style.display = "none";
-	document.getElementById("neutral").style.display = "none";
-	document.getElementById("bad").style.display = "none";
-	
-	if(ifend==0){
+	switch (a) {
+	case 1:
+		good++;
+		break;
+	case -1:
+		bad++;
+		break;
+	case 0.5:
+		neutral++;
+		break;
+	}
+	mvyv();
+	/*if(ifend==0){
 	if(a>0.5){ vpf[ae][np]++; if(ima==0){vp1++; }else{pp++; }  }
 	if(a<0){ vpf[ae][np]--;
-	if(ima==0){vm++; /*pp1[0]--; bue--;*/ }else{pm++;}   }
+	if(ima==0){vm++; }else{pm++;}   }
 	if(a==0.5){
 	if(np==1){ vpf[ae][1]+=0.3; if(ima==0){vp1+=0.1; }else{pp+=0.1; } }
 	else{ vpf[ae][2]-=0.3; if(ima==0){vm+=0.1; }else{pm+=0.1;} } 
@@ -256,17 +264,17 @@ function pmr(a)
 	{vpf[ae][0]=0; vpf[ae][1]=0; vpf[ae][2]=0; pv++; mxpf++; fkv++;}
 	}
 
-	/*if(a==2){ if(ima==1){vp[ae][np+2]++; rp++;}
-	else{ if(vp[ae][3]+vp[ae][4]>0){vp[ae][np+2]+=0.5; rp+=0.1;}; }
-	}
-	else{ if(vp[ae][np+2]>0) { if(ima==1){vp[ae][np+2]--; rm++;}
-		else{vp[ae][np+2]-=0.5; rm+=0.1;} } }*/
 	mvyv();
-	}
+	}*/
 }
 
 function stats() {
-	$(".counter").replaceWith("<p class='counter'>" + counter++ + "</p>");
+	var text = "<p class='counter'>";
+	text += counter++ + ": ";
+	text += "+" + good + " " + neutral + " -" + bad;
+	text += "</p>";
+	//$(".counter").replaceWith("<p class='counter'>" + counter++ + "</p>");
+	$(".counter").replaceWith(text);
 }
 
 var spsk=['','']; esk=0;

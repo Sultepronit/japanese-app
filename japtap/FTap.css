@@ -1,3 +1,7 @@
+* {
+	font-size: 1.1em;
+}
+
 header{background: #eeeeee;}
 
 p{margin: 0;}
@@ -21,7 +25,7 @@ overflow: auto;
 }
 
 .buttons button {
-	width: 22.6%;
+	width: 22.5%;
 	height: 200px;
 	margin: 1%;
 }
@@ -35,6 +39,19 @@ overflow: auto;
 button#good{background-color: green;}
 button#neutral{background-color:yellow;}
 button#bad{background-color: red;}
+
+.of{
+font-family: "MS PMincho";
+margin:0;
+font-size: 4em;
+text-align: center;
+}
+
+.ps{
+margin:0;
+font-size: 3em;
+text-align: center;
+}
 
 .kan{
 float: none;
@@ -107,22 +124,10 @@ margin:0;
 font-size: 5em;
 text-align: center;
 }
-.of{
-font-family: "MS PMincho";
-margin:0;
-font-size: 6em;
-text-align: center;
-}
 
 .ts{
 font-family: "MS PMincho";
 font-size: 2em;
-text-align: center;
-}
-
-.ps{
-margin:0;
-font-size: 3.6em;
 text-align: center;
 }
 
